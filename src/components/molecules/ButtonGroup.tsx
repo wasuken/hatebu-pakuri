@@ -12,6 +12,7 @@ const MainIcon = styled.h1`
   margin-top: -5px;
   margin-bottom: 10px;
   height: 32px;
+  margin-left: 10px;
 `;
 
 const BtnGroup = styled.div`
