@@ -4,6 +4,6 @@ export const media = {
   },
 };
 export interface ButtonInfo {
-  href: string;
+  href: string|null;
   child: React.ReactNode;
 }
