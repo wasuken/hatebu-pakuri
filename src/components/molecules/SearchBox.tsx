@@ -22,7 +22,7 @@ const SearchInput = styled.input`
   width: 100%;
 `;
 
-export interface SearchBoxProps{
+export interface SearchBoxProps {
   query: string;
   setQuery: (s: string) => void;
 }
@@ -33,6 +33,7 @@ export default function SearchBox(props: SearchBoxProps) {
     <SearchBoxForm>
       <SearchInput
         type="text"
+        placeholder="エントリーを検索する"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

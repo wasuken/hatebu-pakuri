@@ -1,68 +1,28 @@
+import styled from "styled-components";
 import Header from "./components/templates/header";
 import Sidebar from "./components/organisms/sidebar";
-import {
-  BiBorderNone,
-  BiPencil,
-  BiBorderAll,
-  BiInfoCircle,
-} from "react-icons/bi";
-import {
-  BsFillExclamationSquareFill,
-  BsFillQuestionSquareFill,
-  BsBell,
-} from "react-icons/bs";
-
-import { ButtonInfo } from "./const";
-
-import styled from "styled-components";
+import NewsList from "./components/templates/NewsList";
+import { sidebar_items, news_items } from "./testdata";
+import { media } from "./const";
 
 const Area = styled.div`
   display: flex;
+  @media (max-width: ${media.phone.width}) {
+    flex-direction: column;
+  }
 `;
 
 function App() {
-  const items: ButtonInfo[] = [
-    {
-      href: "#",
-      child: <BiBorderNone />,
-    },
-    {
-      href: "#",
-      child: <BsFillExclamationSquareFill />,
-    },
-    {
-      href: "#",
-      child: <BiPencil />,
-    },
-    {
-      href: "#",
-      child: <BsFillQuestionSquareFill />,
-    },
-    {
-      href: "#",
-      child: <BiBorderAll />,
-    },
-    {
-      href: null,
-      child: null,
-    },
-    {
-      href: "#",
-      child: <BiInfoCircle />,
-    },
-    {
-      href: "#",
-      child: <BsBell />,
-    },
-  ];
   return (
-    <div>
-      <Header />
-      <Area>
-        <Sidebar items={items} />
-      </Area>
-    </div>
-  );
+		<div>
+			<Header />
+			<Area>
+				<Sidebar items={sidebar_items} />
+				<NewsList news_list={news_items} />
+			</Area>
+
+		</div>
+	);
 }
 
 export default App;
